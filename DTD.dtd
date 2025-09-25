@@ -1,0 +1,39 @@
+<!ELEMENT timeTable(complexes, lessons)>
+<!ELEMENT lessons(lesson+)>
+<!ELEMENT complexes(complex+)>
+<!ELEMENT lesson date, time)>
+<!ELEMENT date(#PCDATA)>
+<!ELEMENT time(#PCDATA)>
+<!ELEMENT complex(name, address)>
+<!ELEMENT name(#PCDATA)>
+<!ELEMENT address(#PCDATA)>
+<!ATTLIST complex code ID REQUIRED>
+<!ATTLIST lesson 
+    no CDATA #REQUIRED
+    complex IDREF #REQUIRED>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE timeTable SYSTEM "DTD.dtd">
+<timeTable>
+    <complexes>
+        <complex code="c1">
+            <name>iIThub</name>
+            <address>Москва, ул. Мира, 119с332</address>
+        </complex>
+        <complex code="c2">
+            <name>iIThub</name>
+            <address>Москва, ул. Дубинская, 96</address>
+        </complex>
+    </complexes>
+    
+    <lessons>
+        <lesson no="1" complex="к1">
+            <date>2025-09-25</date>
+            <time>14:00</time>
+        </lesson>
+        <lesson no="2" complex="к2">
+            <date>2025-09-25</date>
+            <time>14:00</time>
+        </lesson>
+    </lessons>
+</timeTable>
